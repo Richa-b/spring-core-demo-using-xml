@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <!-- <bean name="drawing" class="com.demo.Drawing">
+        <property name="shape">
+            <bean class="com.demo.Triangle">
+                <property name="height" value="10"/>
+                <property name="altitude" value="20"/>
+            </bean>
+        </property>
+    </bean>-->
+
+
+    <bean name="drawing" class="com.demo.Drawing">
+        <property name="shape">
+            <bean class="com.demo.Circle">
+                <property name="point" >
+                    <bean class="com.demo.Point">
+                        <property name="x" value="0"/>
+                        <property name="y" value="0"/>
+                        <property name="z" value="0"/>
+                    </bean>
+                </property>
+            </bean>
+        </property>
+    </bean>
+
+</beans>
