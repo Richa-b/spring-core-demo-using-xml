@@ -9,6 +9,8 @@ stacktrace.log
 *.log
 .idea
 web-app
+
+
 web-app/
 *.ipr
 *.iws
