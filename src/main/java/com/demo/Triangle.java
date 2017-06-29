@@ -1,13 +1,24 @@
 package com.demo;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Required;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.List;
 import java.util.Map;
 
+// Used in SpringMainAnnotationConfigDemo
+@Component
 public class Triangle implements Shape {
 
     private int height;
     private int altitude;
+
+    // Used For SpringMainRequiredAnnotationDemo & SpringMainAnnotationConfigDemo
+    @Autowired
     private Point point1;
     private Point point2;
     private Point point3;
@@ -26,6 +37,8 @@ public class Triangle implements Shape {
         return height;
     }
 
+    // Used For SpringMainRequiredAnnotationDemo
+    //@Required
     public void setHeight(int a) {
         System.out.println("setting Height");
         this.height = a;
@@ -114,6 +127,20 @@ public class Triangle implements Shape {
         System.out.print(super.toString());
         return "Height =" + height + ",altitude=" + altitude + ",Point1=(" + point1 + ") Point2=(" + point2 + ") Point3=(" + point3 + ")";
     }
+
+
+    //Used In SpringMainAnnotationConfigDemo
+    @PostConstruct
+    public void init() {
+        System.out.println("Post Consrtruct");
+    }
+
+    //Used In SpringMainAnnotationConfigDemo
+    @PreDestroy
+    public void destruct() {
+        System.out.println("Pre Destroy");
+    }
+
 }
 
 
